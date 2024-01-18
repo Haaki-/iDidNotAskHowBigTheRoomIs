@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bxfqm2rc0v7f5"]
+[gd_scene load_steps=3 format=3 uid="uid://bxfqm2rc0v7f5"]
 
 [ext_resource type="PackedScene" uid="uid://cbcejo7wpd7ju" path="res://Scene/square_boi.tscn" id="1_swr3h"]
+[ext_resource type="PackedScene" uid="uid://ba2muuscgau2h" path="res://Scene/enemy_flame.tscn" id="2_u3mdk"]
 
 [node name="GameRoot" type="Node2D"]
 
@@ -19,4 +20,8 @@ offset_bottom = 610.0
 color = Color(0.54902, 0.47451, 0.47451, 1)
 
 [node name="SquareBoi" parent="." instance=ExtResource("1_swr3h")]
+unique_name_in_owner = true
 position = Vector2(347, 186)
+
+[node name="EnemyFlame" parent="." instance=ExtResource("2_u3mdk")]
+position = Vector2(799, 476)
