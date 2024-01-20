@@ -27,7 +27,7 @@ position = Vector2(0, 491.565)
 shape = SubResource("WorldBoundaryShape2D_04ufq")
 
 [node name="Top" type="CollisionShape2D" parent="CanvasLayer/Walls"]
-position = Vector2(0, -459.69)
+position = Vector2(-2, -457)
 rotation = -3.14159
 shape = SubResource("WorldBoundaryShape2D_04ufq")
 
@@ -47,9 +47,9 @@ position = Vector2(961.5, 557)
 scale = Vector2(1799, 948)
 texture = ExtResource("3_iksn5")
 
-[node name="EnemyFlame" parent="CanvasLayer" instance=ExtResource("2_u3mdk")]
+[node name="EnemyFlame" parent="." instance=ExtResource("2_u3mdk")]
 position = Vector2(964, 264)
 
-[node name="SquareBoi" parent="CanvasLayer" instance=ExtResource("1_swr3h")]
+[node name="SquareBoi" parent="." instance=ExtResource("1_swr3h")]
 unique_name_in_owner = true
 position = Vector2(969, 861)
