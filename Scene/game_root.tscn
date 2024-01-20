@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bxfqm2rc0v7f5"]
+[gd_scene load_steps=6 format=3 uid="uid://bxfqm2rc0v7f5"]
 
 [ext_resource type="PackedScene" uid="uid://cbcejo7wpd7ju" path="res://Scene/square_boi.tscn" id="1_swr3h"]
 [ext_resource type="PackedScene" uid="uid://ba2muuscgau2h" path="res://Scene/enemy_flame.tscn" id="2_u3mdk"]
 [ext_resource type="Texture2D" uid="uid://ctpu6hdshndjp" path="res://Sprite/1pxdot.png" id="3_iksn5"]
+[ext_resource type="PackedScene" uid="uid://b87fahri6w1yr" path="res://Scene/enemy_slime.tscn" id="4_b8jqx"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_04ufq"]
 
@@ -53,3 +54,6 @@ position = Vector2(964, 264)
 [node name="SquareBoi" parent="." instance=ExtResource("1_swr3h")]
 unique_name_in_owner = true
 position = Vector2(969, 861)
+
+[node name="enemySlime" parent="." instance=ExtResource("4_b8jqx")]
+position = Vector2(1491, 408)
