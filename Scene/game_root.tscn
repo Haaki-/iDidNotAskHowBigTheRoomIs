@@ -1,27 +1,55 @@
-[gd_scene load_steps=3 format=3 uid="uid://bxfqm2rc0v7f5"]
+[gd_scene load_steps=5 format=3 uid="uid://bxfqm2rc0v7f5"]
 
 [ext_resource type="PackedScene" uid="uid://cbcejo7wpd7ju" path="res://Scene/square_boi.tscn" id="1_swr3h"]
 [ext_resource type="PackedScene" uid="uid://ba2muuscgau2h" path="res://Scene/enemy_flame.tscn" id="2_u3mdk"]
+[ext_resource type="Texture2D" uid="uid://ctpu6hdshndjp" path="res://Sprite/1pxdot.png" id="3_iksn5"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_04ufq"]
 
 [node name="GameRoot" type="Node2D"]
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = 894.0
-offset_top = 76.0
-offset_right = 1054.0
-offset_bottom = 223.0
-color = Color(0.337255, 0.576471, 0.67451, 1)
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
 
-[node name="ColorRect2" type="ColorRect" parent="."]
-offset_left = 69.0
-offset_top = 493.0
-offset_right = 194.0
-offset_bottom = 610.0
-color = Color(0.54902, 0.47451, 0.47451, 1)
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
 
-[node name="SquareBoi" parent="." instance=ExtResource("1_swr3h")]
+[node name="Walls" type="StaticBody2D" parent="CanvasLayer"]
+position = Vector2(960, 540)
+
+[node name="Bottom" type="CollisionShape2D" parent="CanvasLayer/Walls"]
+position = Vector2(0, 491.565)
+shape = SubResource("WorldBoundaryShape2D_04ufq")
+
+[node name="Top" type="CollisionShape2D" parent="CanvasLayer/Walls"]
+position = Vector2(0, -459.69)
+rotation = -3.14159
+shape = SubResource("WorldBoundaryShape2D_04ufq")
+
+[node name="Left" type="CollisionShape2D" parent="CanvasLayer/Walls"]
+position = Vector2(-900, 0)
+rotation = 1.5708
+shape = SubResource("WorldBoundaryShape2D_04ufq")
+
+[node name="Right" type="CollisionShape2D" parent="CanvasLayer/Walls"]
+position = Vector2(900, 0)
+rotation = 4.71239
+shape = SubResource("WorldBoundaryShape2D_04ufq")
+
+[node name="Floor" type="Sprite2D" parent="CanvasLayer"]
+modulate = Color(0.34902, 0.278431, 0.247059, 1)
+position = Vector2(961.5, 557)
+scale = Vector2(1799, 948)
+texture = ExtResource("3_iksn5")
+
+[node name="EnemyFlame" parent="CanvasLayer" instance=ExtResource("2_u3mdk")]
+position = Vector2(964, 264)
+
+[node name="SquareBoi" parent="CanvasLayer" instance=ExtResource("1_swr3h")]
 unique_name_in_owner = true
-position = Vector2(347, 186)
-
-[node name="EnemyFlame" parent="." instance=ExtResource("2_u3mdk")]
-position = Vector2(799, 476)
+position = Vector2(969, 861)
