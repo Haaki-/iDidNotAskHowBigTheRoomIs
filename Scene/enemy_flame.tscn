@@ -1,11 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://ba2muuscgau2h"]
+[gd_scene load_steps=8 format=3 uid="uid://ba2muuscgau2h"]
 
 [ext_resource type="Script" path="res://Script/enemy.gd" id="1_wkhlp"]
 [ext_resource type="Texture2D" uid="uid://uvnhdsjt3huk" path="res://Sprite/Fire Frames/firestuff_0000.png" id="2_re7ek"]
 [ext_resource type="Texture2D" uid="uid://c6uauofrtdegg" path="res://Sprite/Fire Frames/firestuff_0003.png" id="3_gvebh"]
 [ext_resource type="Texture2D" uid="uid://dgvndjxfednqh" path="res://Sprite/Fire Frames/firestuff_0006.png" id="4_5ippv"]
 [ext_resource type="Texture2D" uid="uid://ceu5poq1nsk15" path="res://Sprite/Fire Frames/firestuff_0009.png" id="5_hdgdi"]
-[ext_resource type="Script" path="res://Script/fireanimation.gd" id="6_i02t2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_msugc"]
 radius = 31.1448
@@ -49,4 +48,3 @@ scale = Vector2(0.548913, 0.548913)
 sprite_frames = SubResource("SpriteFrames_vevx7")
 animation = &"FireSprite"
 frame_progress = 0.310411
-script = ExtResource("6_i02t2")
