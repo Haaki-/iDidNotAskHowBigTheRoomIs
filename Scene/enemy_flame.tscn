@@ -10,6 +10,7 @@
 radius = 31.1448
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vevx7"]
+resource_name = "Fire"
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -46,4 +47,4 @@ position = Vector2(0, -5)
 scale = Vector2(0.548913, 0.548913)
 sprite_frames = SubResource("SpriteFrames_vevx7")
 animation = &"Fire Sprite"
-frame_progress = 0.7856
+frame_progress = 0.756706
