@@ -103,14 +103,14 @@ offset = Vector2(-3.985, -44.84)
 
 [node name="SlimeEyes" type="Sprite2D" parent="."]
 modulate = Color(0.137255, 0.529412, 0.156863, 1)
-scale = Vector2(1.09595, 0.951806)
+scale = Vector2(1.08784, 0.955424)
 texture = ExtResource("3_yx8mo")
 offset = Vector2(-3.985, -44.84)
 
 [node name="SlimeBrows" type="Sprite2D" parent="."]
 modulate = Color(0.137255, 0.529412, 0.156863, 1)
-position = Vector2(0, 3.80834)
-scale = Vector2(1.01598, 0.951806)
+position = Vector2(0, 3.42439)
+scale = Vector2(1.01593, 0.955424)
 texture = ExtResource("4_8or6q")
 offset = Vector2(-3.985, -44.84)
 

@@ -151,7 +151,6 @@ texture = ExtResource("2_sv6qc")
 shape = SubResource("CircleShape2D_aynke")
 
 [node name="DirectionIndicator" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(-7.62939e-06, -7.62939e-06)
 scale = Vector2(0.196667, 0.196667)
 texture = ExtResource("3_vbh1y")
