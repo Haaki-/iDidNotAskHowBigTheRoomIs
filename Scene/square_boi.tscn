@@ -1,10 +1,143 @@
-[gd_scene load_steps=4 format=3 uid="uid://cbcejo7wpd7ju"]
+[gd_scene load_steps=11 format=3 uid="uid://cbcejo7wpd7ju"]
 
 [ext_resource type="Script" path="res://Script/square_boi.gd" id="1_8rxiq"]
 [ext_resource type="Texture2D" uid="uid://b5i520w78msbd" path="res://Sprite/Prototype - PlayerC.png" id="2_sv6qc"]
+[ext_resource type="Texture2D" uid="uid://cb6r4rynydthp" path="res://Sprite/arrowcheck.png" id="3_vbh1y"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_aynke"]
 radius = 52.0384
+
+[sub_resource type="Animation" id="Animation_rb5l1"]
+resource_name = "MovingUp"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DirectionIndicator:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DirectionIndicator:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_8r52k"]
+resource_name = "MovingDown"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DirectionIndicator:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-3.16952]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DirectionIndicator:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_54ds2"]
+resource_name = "MovingRight"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DirectionIndicator:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.5708]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DirectionIndicator:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_1kpg4"]
+resource_name = "MovingLeft"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DirectionIndicator:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-1.5708]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DirectionIndicator:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_ut1nx"]
+resource_name = "PlayerIdle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DirectionIndicator:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qkvt8"]
+_data = {
+"MovingDown": SubResource("Animation_8r52k"),
+"MovingLeft": SubResource("Animation_1kpg4"),
+"MovingRight": SubResource("Animation_54ds2"),
+"MovingUp": SubResource("Animation_rb5l1"),
+"PlayerIdle": SubResource("Animation_ut1nx")
+}
 
 [node name="SquareBoi" type="CharacterBody2D"]
 script = ExtResource("1_8rxiq")
@@ -16,3 +149,14 @@ texture = ExtResource("2_sv6qc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_aynke")
+
+[node name="DirectionIndicator" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-7.62939e-06, -7.62939e-06)
+scale = Vector2(0.196667, 0.196667)
+texture = ExtResource("3_vbh1y")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_qkvt8")
+}
