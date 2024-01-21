@@ -1,52 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://ba2muuscgau2h"]
+[gd_scene load_steps=3 format=3 uid="uid://dmf8sw6g0aojn"]
 
-[ext_resource type="Script" path="res://Script/enemy.gd" id="1_wkhlp"]
-[ext_resource type="Texture2D" uid="uid://uvnhdsjt3huk" path="res://Sprite/Fire Frames/firestuff_0000.png" id="2_re7ek"]
-[ext_resource type="Texture2D" uid="uid://c6uauofrtdegg" path="res://Sprite/Fire Frames/firestuff_0003.png" id="3_gvebh"]
-[ext_resource type="Texture2D" uid="uid://dgvndjxfednqh" path="res://Sprite/Fire Frames/firestuff_0006.png" id="4_5ippv"]
-[ext_resource type="Texture2D" uid="uid://ceu5poq1nsk15" path="res://Sprite/Fire Frames/firestuff_0009.png" id="5_hdgdi"]
-[ext_resource type="Script" path="res://Script/fireanimation.gd" id="6_i02t2"]
+[ext_resource type="PackedScene" uid="uid://box7yd7wn8lvr" path="res://Scene/enemy.tscn" id="1_ak0xb"]
+[ext_resource type="PackedScene" uid="uid://coqoptwexw36e" path="res://Scene/flame.tscn" id="2_ee31s"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_msugc"]
-radius = 31.1448
+[node name="Enemy" instance=ExtResource("1_ak0xb")]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_vevx7"]
-resource_name = "Fire"
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_re7ek")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_gvebh")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_5ippv")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_hdgdi")
-}],
-"loop": true,
-"name": &"FireSprite",
-"speed": 10.0
-}, {
-"frames": [],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[node name="EnemyFlame" type="CharacterBody2D"]
-position = Vector2(0, -1)
-script = ExtResource("1_wkhlp")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_msugc")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -5)
-scale = Vector2(0.548913, 0.548913)
-sprite_frames = SubResource("SpriteFrames_vevx7")
-animation = &"FireSprite"
-frame_progress = 0.310411
-script = ExtResource("6_i02t2")
+[node name="Node2D" parent="." index="0" instance=ExtResource("2_ee31s")]

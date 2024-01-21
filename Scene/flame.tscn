@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://coqoptwexw36e"]
+
+[ext_resource type="Texture2D" uid="uid://uvnhdsjt3huk" path="res://Sprite/Fire Frames/firestuff_0000.png" id="1_bkixh"]
+[ext_resource type="Texture2D" uid="uid://c6uauofrtdegg" path="res://Sprite/Fire Frames/firestuff_0003.png" id="2_ub05b"]
+[ext_resource type="Texture2D" uid="uid://dgvndjxfednqh" path="res://Sprite/Fire Frames/firestuff_0006.png" id="3_fgey4"]
+[ext_resource type="Texture2D" uid="uid://ceu5poq1nsk15" path="res://Sprite/Fire Frames/firestuff_0009.png" id="4_7sdle"]
+[ext_resource type="Script" path="res://Script/fireanimation.gd" id="5_tfvfy"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dabdb"]
+resource_name = "Fire"
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_bkixh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ub05b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_fgey4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7sdle")
+}],
+"loop": true,
+"name": &"FireSprite",
+"speed": 10.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Flame" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -26)
+scale = Vector2(0.548913, 0.548913)
+sprite_frames = SubResource("SpriteFrames_dabdb")
+animation = &"FireSprite"
+script = ExtResource("5_tfvfy")
