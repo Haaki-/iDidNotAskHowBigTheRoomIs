@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var velocityBullet = Vector2(0, 0)
+var velocityBullet = Vector2(0, 1)
 var speed = 300
 
 

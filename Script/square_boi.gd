@@ -36,4 +36,4 @@ func shoot ():
 	get_parent().add_child(bullet)
 	bullet.position = $Marker2D.global_position 
 	
-	bullet.velocity = get_global_mouse_position() - bullet.position
+	bullet.velocityBullet = get_global_mouse_position() - bullet.position
