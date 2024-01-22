@@ -4,8 +4,10 @@ extends CharacterBody2D
 
 var health
 
+@onready var _animation_player = $AnimationPlayer
+
 func _ready():
-	play()
+	_animation_player.play("idle")
 	
 
 func _physics_process(_delta):
