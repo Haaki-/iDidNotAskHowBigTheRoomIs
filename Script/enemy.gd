@@ -4,6 +4,10 @@ extends CharacterBody2D
 
 var health
 
+func _ready():
+	play()
+	
+
 func _physics_process(_delta):
 
 	var direction = global_position.direction_to(player.global_position)

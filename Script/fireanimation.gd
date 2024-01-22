@@ -1,5 +1,9 @@
 
 extends AnimatedSprite2D
 
+@onready var _animation_player = $AnimationPlayer
+
 func _ready():
-	play()
+	_animation_player.play("idle")
+	
+	
