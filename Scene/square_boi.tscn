@@ -159,3 +159,6 @@ texture = ExtResource("3_vbh1y")
 libraries = {
 "": SubResource("AnimationLibrary_qkvt8")
 }
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(41, -2)
