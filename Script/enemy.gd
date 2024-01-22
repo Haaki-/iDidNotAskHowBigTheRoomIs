@@ -6,9 +6,11 @@ var health
 
 @onready var _animation_player = $AnimationPlayer
 
-func _ready():
-	_animation_player.play("idle")
-	
+func _process(delta):
+	if velocity.is_zero_approx():
+		_animation_player.play("idle")
+	else:
+		_animation_player.play("idle_2")
 
 func _physics_process(_delta):
 
