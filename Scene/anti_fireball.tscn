@@ -7,7 +7,7 @@
 
 [node name="AntiFireball" type="CharacterBody2D"]
 collision_layer = 8
-collision_mask = 4
+collision_mask = 5
 script = ExtResource("1_fap0r")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
