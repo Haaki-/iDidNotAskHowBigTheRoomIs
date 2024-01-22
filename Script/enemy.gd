@@ -9,8 +9,8 @@ var health
 func _process(delta):
 	if velocity.is_zero_approx():
 		_animation_player.play("idle")
-	else:
-		_animation_player.play("idle_2")
+	if velocity.is_normalized():
+		_animation_player.play("idle")
 
 func _physics_process(_delta):
 

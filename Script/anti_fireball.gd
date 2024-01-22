@@ -6,5 +6,8 @@ var speed = 300
 
 func _physics_process(delta):
 	var collision_info = move_and_collide(velocityBullet.normalized() * delta * speed)
+	if collision_info:
+		velocity = velocity.bounce(collision_info.get_normal())
+	
 	
 	

@@ -50,6 +50,8 @@ texture = ExtResource("3_iksn5")
 
 [node name="EnemyFlame" parent="." instance=ExtResource("2_u3mdk")]
 position = Vector2(964, 264)
+collision_layer = 1
+collision_mask = 1
 
 [node name="SquareBoi" parent="." instance=ExtResource("1_swr3h")]
 unique_name_in_owner = true
