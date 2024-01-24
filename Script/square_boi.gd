@@ -12,7 +12,7 @@ func _physics_process(_delta):
 #Movement-dependent animation
 @onready var _animation_player = $AnimationPlayer
 	
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_pressed("MoveLeft"):
 		_animation_player.play("MovingLeft")
 	elif Input.is_action_pressed("MoveRight"):
@@ -33,7 +33,8 @@ const bulletPath = preload("res://Scene/anti_fireball.tscn")
 func shoot ():
 	var bullet = bulletPath.instantiate()
 	
-	get_parent().add_child(bullet)
 	bullet.position = $Marker2D.global_position 
+	bullet.direction = get_global_mouse_position() - bullet.position
 	
-	bullet.velocityBullet = get_global_mouse_position() - bullet.position
+	get_parent().add_child(bullet)
+	

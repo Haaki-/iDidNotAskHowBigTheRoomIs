@@ -1,12 +1,12 @@
 extends CharacterBody2D
 
-@onready var player = %SquareBoi
+@onready var player = get_node("/root/GameRoot/SquareBoi")
 
 var health
 
 @onready var _animation_player = $AnimationPlayer
 
-func _process(delta):
+func _process(_delta):
 	if velocity.is_zero_approx():
 		_animation_player.play("idle")
 	if velocity.is_normalized():

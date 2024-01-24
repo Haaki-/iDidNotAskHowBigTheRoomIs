@@ -1,11 +1,14 @@
 extends CharacterBody2D
 
-var velocityBullet = Vector2(0, 0)
-var speed = 300
+var speed = 600
 
+var direction
 
-func _physics_process(delta):
-	var collision = move_and_collide(velocityBullet.normalized() * delta * speed)
+func _ready():
+	velocity = direction.normalized() * speed
+
+func _physics_process(_delta):
+	var collision = move_and_collide(velocity * _delta)
 	if collision:
 		velocity = velocity.bounce(collision.get_normal())
 	
