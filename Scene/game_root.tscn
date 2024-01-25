@@ -53,4 +53,4 @@ texture = ExtResource("3_iksn5")
 position = Vector2(961, 883)
 
 [node name="enemySlime" parent="." instance=ExtResource("4_b8jqx")]
-position = Vector2(963, 243)
+position = Vector2(960, 233)

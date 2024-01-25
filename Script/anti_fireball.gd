@@ -3,6 +3,7 @@ extends CharacterBody2D
 var speed = 600
 
 var direction
+var bounced = 0
 
 func _ready():
 	velocity = direction.normalized() * speed
@@ -10,7 +11,13 @@ func _ready():
 func _physics_process(_delta):
 	var collision = move_and_collide(velocity * _delta)
 	if collision:
-		velocity = velocity.bounce(collision.get_normal())
+		if bounced >= 1:
+
+			queue_free()
+		else:
+			velocity = velocity.bounce(collision.get_normal())
+			bounced += 1
+
 	
 func _on_VisibilityNotifier2D_screen_exited():
 	# Deletes the bullet when it exits the screen.
