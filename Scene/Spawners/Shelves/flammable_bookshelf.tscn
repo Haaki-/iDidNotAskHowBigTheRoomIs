@@ -1,9 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://bnenbfg4ubsiv"]
+[gd_scene load_steps=4 format=3 uid="uid://bnenbfg4ubsiv"]
 
 [ext_resource type="PackedScene" uid="uid://dxqaxb1sh5f33" path="res://Scene/Spawners/Shelves/base_bookshelf.tscn" id="1_dco4f"]
 [ext_resource type="PackedScene" uid="uid://oo8kik02thr4" path="res://Scene/Spawners/fire_spawner.tscn" id="2_mumpp"]
+[ext_resource type="Texture2D" uid="uid://vx1hun52kiuw" path="res://Sprite/BookShelf1.png" id="2_yx8nm"]
 
 [node name="FlammableBookshelf" instance=ExtResource("1_dco4f")]
+
+[node name="BaseShelf1" parent="." index="0"]
+texture = ExtResource("2_yx8nm")
 
 [node name="FireSpawner" parent="." index="2" instance=ExtResource("2_mumpp")]
 position = Vector2(0, 2)
