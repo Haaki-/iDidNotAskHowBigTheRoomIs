@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cb5h6weqoxi22"]
+
+[ext_resource type="PackedScene" uid="uid://b3rsbh5y7ro7t" path="res://Scene/enemy.tscn" id="1_ak0xb"]
+[ext_resource type="PackedScene" uid="uid://b8q363fa226o4" path="res://Scene/flame.tscn" id="2_ee31s"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_skenk"]
+radius = 17.0
+
+[node name="Enemy" instance=ExtResource("1_ak0xb")]
+
+[node name="Flame" parent="." index="0" instance=ExtResource("2_ee31s")]
+position = Vector2(0, 5)
+
+[node name="FlameTimeOut" type="Timer" parent="." index="1"]
+wait_time = 5.0
+autostart = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3"]
+shape = SubResource("CircleShape2D_skenk")
+
+[connection signal="timeout" from="FlameTimeOut" to="." method="die"]
