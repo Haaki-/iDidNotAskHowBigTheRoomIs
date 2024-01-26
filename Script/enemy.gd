@@ -21,3 +21,7 @@ func _physics_process(_delta):
 	velocity += (target_velocity - velocity) * 0.1
 
 	move_and_slide()
+
+func die():
+	print("Hey")
+	queue_free()

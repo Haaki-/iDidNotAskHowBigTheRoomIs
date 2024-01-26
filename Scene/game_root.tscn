@@ -53,17 +53,14 @@ texture = ExtResource("3_iksn5")
 [node name="SquareBoi" parent="." instance=ExtResource("1_swr3h")]
 position = Vector2(961, 883)
 
-[node name="Enemy" parent="." instance=ExtResource("2_u3mdk")]
-position = Vector2(534, 409)
-
-[node name="Enemy2" parent="." instance=ExtResource("2_u3mdk")]
-position = Vector2(701, 325)
-
-[node name="Enemy3" parent="." instance=ExtResource("2_u3mdk")]
-position = Vector2(1223, 363)
-
-[node name="Enemy4" parent="." instance=ExtResource("2_u3mdk")]
-position = Vector2(1426, 462)
-
 [node name="SlimeSpawner" parent="." instance=ExtResource("5_he1qr")]
 position = Vector2(961, 128)
+
+[node name="Enemy" parent="." instance=ExtResource("2_u3mdk")]
+position = Vector2(737, 346)
+
+[node name="Enemy2" parent="." instance=ExtResource("2_u3mdk")]
+position = Vector2(964, 358)
+
+[node name="Enemy3" parent="." instance=ExtResource("2_u3mdk")]
+position = Vector2(1155, 358)

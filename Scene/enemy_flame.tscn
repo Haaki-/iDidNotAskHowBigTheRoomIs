@@ -11,5 +11,11 @@ radius = 17.0
 [node name="Flame" parent="." index="0" instance=ExtResource("2_ee31s")]
 position = Vector2(0, 5)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
+[node name="FlameTimeOut" type="Timer" parent="." index="1"]
+wait_time = 5.0
+autostart = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3"]
 shape = SubResource("CircleShape2D_skenk")
+
+[connection signal="timeout" from="FlameTimeOut" to="." method="die"]

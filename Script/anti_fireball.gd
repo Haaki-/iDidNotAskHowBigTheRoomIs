@@ -17,6 +17,8 @@ func _physics_process(_delta):
 		else:
 			velocity = velocity.bounce(collision.get_normal())
 			bounced += 1
+		if collision.has_method("die"):
+			collision.die()
 
 	
 func _on_VisibilityNotifier2D_screen_exited():
