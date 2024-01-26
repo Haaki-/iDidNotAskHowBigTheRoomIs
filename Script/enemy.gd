@@ -1,10 +1,10 @@
 extends CharacterBody2D
 
-@onready var player = get_node("/root/GameRoot/SquareBoi")
+@onready var target = get_node("/root/GameRoot/SquareBoi")
 
 var health
 
-@onready var _animation_player = $AnimationPlayer
+# @onready var _animation_player = $AnimationPlayer
 
 # func _process(_delta):
 # 	if velocity.is_zero_approx():
@@ -14,7 +14,7 @@ var health
 
 func _physics_process(_delta):
 
-	var direction = global_position.direction_to(player.global_position)
+	var direction = global_position.direction_to(target.global_position)
 
 	var target_velocity = direction * 100
 
