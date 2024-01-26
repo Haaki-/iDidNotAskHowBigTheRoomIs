@@ -6,11 +6,11 @@ var health
 
 @onready var _animation_player = $AnimationPlayer
 
-func _process(_delta):
-	if velocity.is_zero_approx():
-		_animation_player.play("idle")
-	if velocity.is_normalized():
-		_animation_player.play("idle")
+# func _process(_delta):
+# 	if velocity.is_zero_approx():
+# 		# _animation_player.play("idle")
+# 	if velocity.is_normalized():
+# 		# _animation_player.play("idle")
 
 func _physics_process(_delta):
 
