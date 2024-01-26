@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://db2mo4pgvlp06"]
 
-[ext_resource type="Texture2D" uid="uid://c432ws4je0cpb" path="res://Sprite/slime-body.png" id="1_sl7a6"]
-[ext_resource type="Texture2D" uid="uid://b64jspgjbik1y" path="res://Sprite/slime-eyes.png" id="2_jpubn"]
-[ext_resource type="Texture2D" uid="uid://s0pqpluvqxin" path="res://Sprite/slime-brows.png" id="3_crybk"]
+[ext_resource type="Texture2D" uid="uid://c432ws4je0cpb" path="res://Sprite/slime-body.png" id="1_tjrw7"]
+[ext_resource type="Texture2D" uid="uid://b64jspgjbik1y" path="res://Sprite/slime-eyes.png" id="2_4ovva"]
+[ext_resource type="Texture2D" uid="uid://s0pqpluvqxin" path="res://Sprite/slime-brows.png" id="3_hc42u"]
 
 [sub_resource type="Animation" id="Animation_r3bn2"]
 length = 0.001
@@ -219,21 +219,21 @@ _data = {
 [node name="SlimeBody" type="Sprite2D" parent="."]
 modulate = Color(0.137255, 0.529412, 0.156863, 1)
 position = Vector2(5, 15)
-texture = ExtResource("1_sl7a6")
+texture = ExtResource("1_tjrw7")
 offset = Vector2(-3.985, -44.84)
 
 [node name="SlimeEyes" type="Sprite2D" parent="."]
 modulate = Color(0.137255, 0.529412, 0.156863, 1)
 position = Vector2(5, 15)
 scale = Vector2(1.01553, 0.987695)
-texture = ExtResource("2_jpubn")
+texture = ExtResource("2_4ovva")
 offset = Vector2(-3.985, -44.84)
 
 [node name="SlimeBrows" type="Sprite2D" parent="."]
 modulate = Color(0.137255, 0.529412, 0.156863, 1)
 position = Vector2(5, 15)
 scale = Vector2(1.01553, 0.987695)
-texture = ExtResource("3_crybk")
+texture = ExtResource("3_hc42u")
 offset = Vector2(-3.985, -44.84)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

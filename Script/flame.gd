@@ -14,9 +14,9 @@ var health
 
 func _physics_process(_delta):
 
-	var direction = global_position.direction_to(target.global_position)
+	var direction = Vector2( randf() - 0.5, randf() - 0.5 )
 
-	var target_velocity = direction * 100
+	var target_velocity = direction * 200
 
 	velocity += (target_velocity - velocity) * 0.1
 

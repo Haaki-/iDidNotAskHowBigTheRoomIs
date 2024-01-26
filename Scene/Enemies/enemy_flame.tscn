@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3hhsmp12tthu"]
+
+[ext_resource type="Script" path="res://Script/flame.gd" id="1_2amne"]
+[ext_resource type="PackedScene" uid="uid://coqoptwexw36e" path="res://Scene/Enemies/Visuals/flame.tscn" id="2_5rifx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g2d2g"]
+radius = 19.0
+
+[node name="EnemyFlame" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_2amne")
+
+[node name="Flame" parent="." instance=ExtResource("2_5rifx")]
+position = Vector2(0, 9)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_g2d2g")
+
+[node name="BurnoutTimer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="BurnoutTimer" to="." method="die"]
