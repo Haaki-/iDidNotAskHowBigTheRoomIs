@@ -1,12 +1,16 @@
-[gd_scene load_steps=9 format=3 uid="uid://bxfqm2rc0v7f5"]
+[gd_scene load_steps=13 format=3 uid="uid://bxfqm2rc0v7f5"]
 
 [ext_resource type="PackedScene" uid="uid://cbcejo7wpd7ju" path="res://Scene/square_boi.tscn" id="1_swr3h"]
 [ext_resource type="Texture2D" uid="uid://b0uqmt5513xl" path="res://Sprite/FloorV2.png" id="2_4gn70"]
+[ext_resource type="Texture2D" uid="uid://c42y3ccfyfy3g" path="res://Sprite/rug1.png" id="2_gnvkn"]
 [ext_resource type="Texture2D" uid="uid://yyikt7lhjkjo" path="res://Sprite/BattlemapV2.png" id="2_r5pcg"]
 [ext_resource type="Texture2D" uid="uid://bq14ee2kkiixx" path="res://Sprite/walls-top-1.png" id="3_8vnl7"]
 [ext_resource type="PackedScene" uid="uid://bnenbfg4ubsiv" path="res://Scene/Spawners/Shelves/flammable_bookshelf.tscn" id="3_v3l57"]
 [ext_resource type="PackedScene" uid="uid://d2y6fhwb3bjjf" path="res://Scene/Spawners/Shelves/flammable_slimeshelf.tscn" id="4_fo5ba"]
+[ext_resource type="Texture2D" uid="uid://bsira26sqanm2" path="res://Sprite/lvl1 wall decor.png" id="5_pcryk"]
 [ext_resource type="Texture2D" uid="uid://bv8qhyoowh6rh" path="res://Sprite/walls-bottom-1.png" id="7_devgq"]
+[ext_resource type="Texture2D" uid="uid://cnbqbbh62ebqr" path="res://Sprite/pillars right.png" id="10_5sm4g"]
+[ext_resource type="Texture2D" uid="uid://dqcmm8yybox0u" path="res://Sprite/tablesandchairs.png" id="11_jhuco"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_04ufq"]
 
@@ -27,6 +31,10 @@ color = Color(0, 0, 0, 1)
 [node name="Floor" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(961.5, 557)
 texture = ExtResource("2_4gn70")
+
+[node name="rug" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(962, 562)
+texture = ExtResource("2_gnvkn")
 
 [node name="Battle Map Grid" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(923.5, 529)
@@ -61,6 +69,10 @@ shape = SubResource("WorldBoundaryShape2D_04ufq")
 position = Vector2(960, 540)
 texture = ExtResource("3_8vnl7")
 
+[node name="wall decor" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(960, 540)
+texture = ExtResource("5_pcryk")
+
 [node name="SquareBoi" parent="." instance=ExtResource("1_swr3h")]
 position = Vector2(961, 883)
 
@@ -85,3 +97,24 @@ position = Vector2(1616, 130)
 
 [node name="FlammableBookshelf3" parent="." instance=ExtResource("3_v3l57")]
 position = Vector2(961, 134)
+
+[node name="Pillars" type="CharacterBody2D" parent="."]
+
+[node name="pillars right" type="Sprite2D" parent="Pillars"]
+position = Vector2(1625, 526)
+texture = ExtResource("10_5sm4g")
+
+[node name="pillars left" type="Sprite2D" parent="Pillars"]
+position = Vector2(292, 526)
+scale = Vector2(-1, 1)
+texture = ExtResource("10_5sm4g")
+
+[node name="Tables" type="CharacterBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Tables"]
+position = Vector2(636, 923)
+texture = ExtResource("11_jhuco")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Tables"]
+position = Vector2(1285, 922)
+texture = ExtResource("11_jhuco")
