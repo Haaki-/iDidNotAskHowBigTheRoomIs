@@ -1,11 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://d2y6fhwb3bjjf"]
+[gd_scene load_steps=4 format=3 uid="uid://d2y6fhwb3bjjf"]
 
 [ext_resource type="PackedScene" uid="uid://bnenbfg4ubsiv" path="res://Scene/Spawners/Shelves/flammable_bookshelf.tscn" id="1_q2kkx"]
 [ext_resource type="PackedScene" uid="uid://bcgd8fwp6hgq8" path="res://Scene/Spawners/slime_spawner.tscn" id="2_q102e"]
+[ext_resource type="Texture2D" uid="uid://dkgyd6xp72suo" path="res://Sprite/PotonShelf1.png" id="3_4jmv0"]
 
 [node name="FlammableSlimeshelf" instance=ExtResource("1_q2kkx")]
 lock_rotation = false
 freeze = false
 
-[node name="SlimeSpawner" parent="." index="3" instance=ExtResource("2_q102e")]
+[node name="PotonShelf1" type="Sprite2D" parent="." index="1"]
+position = Vector2(-1, -1)
+texture = ExtResource("3_4jmv0")
+
+[node name="SlimeSpawner" parent="." index="4" instance=ExtResource("2_q102e")]
 position = Vector2(0, 1)
