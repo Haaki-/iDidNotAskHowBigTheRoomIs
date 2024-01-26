@@ -8,6 +8,9 @@
 lock_rotation = false
 freeze = false
 
+[node name="BaseShelf1" parent="." index="0"]
+visible = false
+
 [node name="PotonShelf1" type="Sprite2D" parent="." index="1"]
 position = Vector2(0, -1)
 texture = ExtResource("3_4jmv0")
