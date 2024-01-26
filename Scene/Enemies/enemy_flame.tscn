@@ -18,6 +18,7 @@ position = Vector2(0, 9)
 shape = SubResource("CircleShape2D_g2d2g")
 
 [node name="BurnoutTimer" type="Timer" parent="."]
+unique_name_in_owner = true
 wait_time = 5.0
 autostart = true
 
