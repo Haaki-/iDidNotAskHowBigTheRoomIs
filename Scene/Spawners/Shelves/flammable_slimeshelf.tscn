@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://d2y6fhwb3bjjf"]
 
 [ext_resource type="PackedScene" uid="uid://bnenbfg4ubsiv" path="res://Scene/Spawners/Shelves/flammable_bookshelf.tscn" id="1_q2kkx"]
-[ext_resource type="PackedScene" uid="uid://bcgd8fwp6hgq8" path="res://Scene/Spawners/slime_spawner.tscn" id="2_q102e"]
+[ext_resource type="PackedScene" uid="uid://0ppekl1jpnhh" path="res://Scene/slime_spawner.tscn" id="2_q102e"]
 
 [node name="FlammableSlimeshelf" instance=ExtResource("1_q2kkx")]
 lock_rotation = false
