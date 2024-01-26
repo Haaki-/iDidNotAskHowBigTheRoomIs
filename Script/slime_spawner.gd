@@ -1,6 +1,6 @@
 extends Node2D
 
-const ENEMY = preload("res://scene/enemies/enemy_slime.tscn")
+const ENEMY = preload("res://Scene/Enemies/enemy_slime.tscn")
 
 func spawn():
 	var new_enemy = ENEMY.instantiate()
