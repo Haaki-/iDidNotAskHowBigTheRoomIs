@@ -11,6 +11,7 @@
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_04ufq"]
 
 [node name="GameRoot" type="Node2D"]
+y_sort_enabled = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
