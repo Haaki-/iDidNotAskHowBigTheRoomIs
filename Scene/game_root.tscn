@@ -1,9 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://bxfqm2rc0v7f5"]
+[gd_scene load_steps=9 format=3 uid="uid://bxfqm2rc0v7f5"]
 
 [ext_resource type="PackedScene" uid="uid://cbcejo7wpd7ju" path="res://Scene/square_boi.tscn" id="1_swr3h"]
+[ext_resource type="Texture2D" uid="uid://b0uqmt5513xl" path="res://Sprite/FloorV2.png" id="2_4gn70"]
+[ext_resource type="Texture2D" uid="uid://yyikt7lhjkjo" path="res://Sprite/BattlemapV2.png" id="2_r5pcg"]
 [ext_resource type="PackedScene" uid="uid://dmf8sw6g0aojn" path="res://Scene/enemy_flame.tscn" id="2_u3mdk"]
-[ext_resource type="Texture2D" uid="uid://ctpu6hdshndjp" path="res://Sprite/1pxdot.png" id="3_iksn5"]
+[ext_resource type="Texture2D" uid="uid://bq14ee2kkiixx" path="res://Sprite/walls-top-1.png" id="3_8vnl7"]
 [ext_resource type="PackedScene" uid="uid://bcgd8fwp6hgq8" path="res://Scene/slime_spawner.tscn" id="5_he1qr"]
+[ext_resource type="Texture2D" uid="uid://bv8qhyoowh6rh" path="res://Sprite/walls-bottom-1.png" id="7_devgq"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_04ufq"]
 
@@ -20,35 +23,42 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
+[node name="Floor" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(961.5, 557)
+texture = ExtResource("2_4gn70")
+
+[node name="Battle Map Grid" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(923.5, 529)
+scale = Vector2(0.962, 0.962)
+texture = ExtResource("2_r5pcg")
+
 [node name="Walls" type="StaticBody2D" parent="CanvasLayer"]
 position = Vector2(960, 540)
 collision_layer = 15
 collision_mask = 15
 
 [node name="Bottom" type="CollisionShape2D" parent="CanvasLayer/Walls"]
-position = Vector2(0, 491.565)
+position = Vector2(0, 494.565)
 shape = SubResource("WorldBoundaryShape2D_04ufq")
 
 [node name="Top" type="CollisionShape2D" parent="CanvasLayer/Walls"]
-position = Vector2(-2, -457)
+position = Vector2(-2, -475)
 rotation = -3.14159
 shape = SubResource("WorldBoundaryShape2D_04ufq")
 
 [node name="Left" type="CollisionShape2D" parent="CanvasLayer/Walls"]
-position = Vector2(-900, 0)
+position = Vector2(-919, 0)
 rotation = 1.5708
 shape = SubResource("WorldBoundaryShape2D_04ufq")
 
 [node name="Right" type="CollisionShape2D" parent="CanvasLayer/Walls"]
-position = Vector2(900, 0)
+position = Vector2(917, 0)
 rotation = 4.71239
 shape = SubResource("WorldBoundaryShape2D_04ufq")
 
-[node name="Floor" type="Sprite2D" parent="CanvasLayer"]
-modulate = Color(0.34902, 0.278431, 0.247059, 1)
-position = Vector2(961.5, 557)
-scale = Vector2(1799, 948)
-texture = ExtResource("3_iksn5")
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(960, 540)
+texture = ExtResource("3_8vnl7")
 
 [node name="SquareBoi" parent="." instance=ExtResource("1_swr3h")]
 position = Vector2(961, 883)
@@ -64,3 +74,10 @@ position = Vector2(964, 358)
 
 [node name="Enemy3" parent="." instance=ExtResource("2_u3mdk")]
 position = Vector2(1155, 358)
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer2"]
+position = Vector2(1001, 329)
+scale = Vector2(1.29, 1.4)
+texture = ExtResource("7_devgq")
