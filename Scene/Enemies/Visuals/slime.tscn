@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://db2mo4pgvlp06"]
+[gd_scene load_steps=9 format=3 uid="uid://db2mo4pgvlp06"]
 
 [ext_resource type="Texture2D" uid="uid://c432ws4je0cpb" path="res://Sprite/slime-body.png" id="1_tjrw7"]
 [ext_resource type="Texture2D" uid="uid://b64jspgjbik1y" path="res://Sprite/slime-eyes.png" id="2_4ovva"]
 [ext_resource type="Texture2D" uid="uid://s0pqpluvqxin" path="res://Sprite/slime-brows.png" id="3_hc42u"]
+[ext_resource type="Script" path="res://Scene/Enemies/Visuals/EnemyAnimationPlayer.gd" id="4_jiogj"]
 
 [sub_resource type="Animation" id="Animation_r3bn2"]
 length = 0.001
@@ -240,3 +241,4 @@ offset = Vector2(-3.985, -44.84)
 libraries = {
 "": SubResource("AnimationLibrary_6t11a")
 }
+script = ExtResource("4_jiogj")
