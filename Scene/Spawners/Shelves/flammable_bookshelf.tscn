@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnenbfg4ubsiv"]
+
+[ext_resource type="PackedScene" uid="uid://dxqaxb1sh5f33" path="res://Scene/Spawners/Shelves/base_bookshelf.tscn" id="1_dco4f"]
+[ext_resource type="PackedScene" uid="uid://oo8kik02thr4" path="res://Scene/Spawners/fire_spawner.tscn" id="2_mumpp"]
+
+[node name="FlammableBookshelf" instance=ExtResource("1_dco4f")]
+
+[node name="FireSpawner" parent="." index="2" instance=ExtResource("2_mumpp")]
+position = Vector2(0, 2)
