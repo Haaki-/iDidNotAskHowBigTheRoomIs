@@ -1,14 +1,19 @@
-[gd_scene load_steps=7 format=3 uid="uid://bxfqm2rc0v7f5"]
+[gd_scene load_steps=9 format=3 uid="uid://bxfqm2rc0v7f5"]
 
 [ext_resource type="PackedScene" uid="uid://cbcejo7wpd7ju" path="res://Scene/square_boi.tscn" id="1_swr3h"]
-[ext_resource type="Texture2D" uid="uid://ctpu6hdshndjp" path="res://Sprite/1pxdot.png" id="3_iksn5"]
-[ext_resource type="PackedScene" uid="uid://bnenbfg4ubsiv" path="res://Scene/Spawners/Shelves/flammable_bookshelf.tscn" id="3_v3l57"]
-[ext_resource type="PackedScene" uid="uid://d2y6fhwb3bjjf" path="res://Scene/Spawners/Shelves/flammable_slimeshelf.tscn" id="4_fo5ba"]
-[ext_resource type="PackedScene" uid="uid://dxqaxb1sh5f33" path="res://Scene/Spawners/Shelves/base_bookshelf.tscn" id="5_6b5xk"]
+[ext_resource type="Texture2D" uid="uid://b0uqmt5513xl" path="res://Sprite/FloorV2.png" id="2_4gn70"]
+[ext_resource type="Texture2D" uid="uid://yyikt7lhjkjo" path="res://Sprite/BattlemapV2.png" id="2_r5pcg"]
+[ext_resource type="PackedScene" uid="uid://dmf8sw6g0aojn" path="res://Scene/enemy_flame.tscn" id="2_u3mdk"]
+[ext_resource type="Texture2D" uid="uid://bq14ee2kkiixx" path="res://Sprite/walls-top-1.png" id="3_8vnl7"]
+[ext_resource type="PackedScene" uid="uid://bcgd8fwp6hgq8" path="res://Scene/slime_spawner.tscn" id="5_he1qr"]
+[ext_resource type="Texture2D" uid="uid://bv8qhyoowh6rh" path="res://Sprite/walls-bottom-1.png" id="7_devgq"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_04ufq"]
 
 [node name="GameRoot" type="Node2D"]
+
+[node name="SlimeSpawner" parent="." instance=ExtResource("5_he1qr")]
+position = Vector2(961, 128)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
@@ -21,56 +26,58 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
+[node name="Floor" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(961.5, 557)
+texture = ExtResource("2_4gn70")
+
+[node name="Battle Map Grid" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(923.5, 529)
+scale = Vector2(0.962, 0.962)
+texture = ExtResource("2_r5pcg")
+
 [node name="Walls" type="StaticBody2D" parent="CanvasLayer"]
 position = Vector2(960, 540)
 collision_layer = 15
 collision_mask = 15
 
 [node name="Bottom" type="CollisionShape2D" parent="CanvasLayer/Walls"]
-position = Vector2(0, 491.565)
+position = Vector2(0, 494.565)
 shape = SubResource("WorldBoundaryShape2D_04ufq")
 
 [node name="Top" type="CollisionShape2D" parent="CanvasLayer/Walls"]
-position = Vector2(-2, -457)
+position = Vector2(-2, -475)
 rotation = -3.14159
 shape = SubResource("WorldBoundaryShape2D_04ufq")
 
 [node name="Left" type="CollisionShape2D" parent="CanvasLayer/Walls"]
-position = Vector2(-900, 0)
+position = Vector2(-919, 0)
 rotation = 1.5708
 shape = SubResource("WorldBoundaryShape2D_04ufq")
 
 [node name="Right" type="CollisionShape2D" parent="CanvasLayer/Walls"]
-position = Vector2(900, 0)
+position = Vector2(917, 0)
 rotation = 4.71239
 shape = SubResource("WorldBoundaryShape2D_04ufq")
 
-[node name="Floor" type="Sprite2D" parent="CanvasLayer"]
-modulate = Color(0.34902, 0.278431, 0.247059, 1)
-position = Vector2(961.5, 557)
-scale = Vector2(1799, 948)
-texture = ExtResource("3_iksn5")
+[node name="Back and Side Walls" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(960, 540)
+texture = ExtResource("3_8vnl7")
 
 [node name="SquareBoi" parent="." instance=ExtResource("1_swr3h")]
 position = Vector2(961, 883)
 
-[node name="FlammableBookshelf" parent="." instance=ExtResource("3_v3l57")]
-position = Vector2(952, 131)
+[node name="Enemy" parent="." instance=ExtResource("2_u3mdk")]
+position = Vector2(737, 346)
 
-[node name="FlammableBookshelf2" parent="." instance=ExtResource("3_v3l57")]
-position = Vector2(328, 131)
+[node name="Enemy2" parent="." instance=ExtResource("2_u3mdk")]
+position = Vector2(964, 358)
 
-[node name="FlammableSlimeshelf" parent="." instance=ExtResource("4_fo5ba")]
-position = Vector2(534, 129)
+[node name="Enemy3" parent="." instance=ExtResource("2_u3mdk")]
+position = Vector2(1155, 358)
 
-[node name="Bookshelf" parent="." instance=ExtResource("5_6b5xk")]
-position = Vector2(747, 127)
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
-[node name="Bookshelf2" parent="." instance=ExtResource("5_6b5xk")]
-position = Vector2(1163, 129)
-
-[node name="FlammableSlimeshelf2" parent="." instance=ExtResource("4_fo5ba")]
-position = Vector2(1373, 131)
-
-[node name="FlammableBookshelf3" parent="." instance=ExtResource("3_v3l57")]
-position = Vector2(1579, 134)
+[node name="Front Wall" type="Sprite2D" parent="CanvasLayer2"]
+position = Vector2(1001, 329)
+scale = Vector2(1.29, 1.4)
+texture = ExtResource("7_devgq")
