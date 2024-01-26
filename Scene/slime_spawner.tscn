@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bcgd8fwp6hgq8"]
 
-[ext_resource type="Script" path="res://Scene/slime_spawner.gd" id="1_ypheu"]
+[ext_resource type="Script" path="res://Script/slime_spawner.gd" id="1_ypheu"]
 [ext_resource type="Texture2D" uid="uid://ctpu6hdshndjp" path="res://Sprite/1pxdot.png" id="2_djdpm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xsfpr"]
