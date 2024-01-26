@@ -11,14 +11,16 @@ func _ready():
 func _physics_process(_delta):
 	var collision = move_and_collide(velocity * _delta)
 	if collision:
-		if bounced >= 1:
+		if bounced >= 2:
 
 			queue_free()
 		else:
 			velocity = velocity.bounce(collision.get_normal())
 			bounced += 1
-		if collision.has_method("die"):
-			collision.die()
+		var collider = collision.get_collider()
+		if collider.has_method("take_damage"):
+			collider.take_damage(1)
+			collider.velocity += direction.normalized() * 500
 
 	
 func _on_VisibilityNotifier2D_screen_exited():
