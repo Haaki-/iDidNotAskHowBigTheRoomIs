@@ -8,6 +8,8 @@ radius = 37.3363
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 scale = Vector2(0.7, 0.7)
+collision_layer = 4
+collision_mask = 14
 script = ExtResource("1_jykgo")
 
 [node name="slime" parent="." instance=ExtResource("1_cou1h")]

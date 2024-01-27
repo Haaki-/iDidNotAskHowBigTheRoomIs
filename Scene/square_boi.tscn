@@ -141,7 +141,7 @@ _data = {
 
 [node name="SquareBoi" type="CharacterBody2D"]
 collision_layer = 2
-collision_mask = 5
+collision_mask = 85
 script = ExtResource("1_8rxiq")
 
 [node name="LeagueLogo" type="Sprite2D" parent="."]

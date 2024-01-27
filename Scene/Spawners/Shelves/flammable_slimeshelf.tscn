@@ -5,8 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://dkgyd6xp72suo" path="res://Sprite/PotonShelf1.png" id="3_4jmv0"]
 
 [node name="FlammableSlimeshelf" instance=ExtResource("1_q2kkx")]
-lock_rotation = false
-freeze = false
 
 [node name="BaseShelf1" parent="." index="0"]
 visible = false
